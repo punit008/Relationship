@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 /**
  * 
- * 
+ * singular and plural in the function name in the model depends on hasOne then its post , if hasMany then its posts
  * 
  * 
  * */ 
