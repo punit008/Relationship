@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\tag;
+use App\Models\Post;
 use App\Models\User;
 use App\Models\Profile;
-use App\Models\Post;
-use App\Models\tag;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -94,4 +95,13 @@ Route::get('/many_to_many', function () {
         return $posts;
 
 
+});
+
+Route::get('/another_many_to_many', function () {
+    // $tag = Tag::get();
+    $tag = Tag::with('posts')->get();
+    // return $tag;
+    foreach($tag as $t){
+        echo $t->posts;
+    }
 });
